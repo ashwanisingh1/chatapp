@@ -4,16 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start":"node server/server.js",
+    "start": "node server/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-
-  "engines":{
-    "node" : "8.9.3" 
+  "engines": {
+    "node": "8.9.3"
   },
   "author": "ashwani",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.16.2"
+    "express": "^4.16.2",
+    "socket.io": "^2.0.4"
   }
 }
