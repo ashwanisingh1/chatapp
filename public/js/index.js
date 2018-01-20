@@ -3,9 +3,10 @@ socket.on('connect',()=>{
   console.log('connected new user');
 });
 socket.on('newMessage',(message)=>{
+  var formattedTime=moment().format('hh:mm a');
   console.log("new message",message);
   var li=jQuery('<li></li>');
-  li.text(`${message.from} : ${message.text}`);
+  li.text(`${message.from} ${formattedTime} : ${message.text}`);
   jQuery('#messages').append(li);
 });
 socket.on('disconnect',()=>{
@@ -13,9 +14,10 @@ socket.on('disconnect',()=>{
 });
 
 socket.on('newLocationMessage',(message)=>{
+  var formattedTime=moment().format('hh:mm a');
   var li=jQuery('<li></li>');
   var a=jQuery('<a target="_blank"> My Current Location </a>');
-  li.text(`${message.from} : `);
+  li.text(`${message.from} ${formattedTime} : `);
   a.attr('href',message.url);
   li.append(a);
   jQuery('#messages').append(li);
