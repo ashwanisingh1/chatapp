@@ -1,6 +1,18 @@
 var socket= io();
 socket.on('connect',()=>{
-  console.log('connected new user');
+  var temp=window.location.search;
+  var params=jQuery.deparam(temp);
+  socket.emit('join',params,(err)=>{
+    if(err)
+     {
+      alert(err);
+      window.location.href='/';
+     }
+     else {
+
+          console.log("no error");
+     }
+  });
 });
 
 function scrollToBottom(){
