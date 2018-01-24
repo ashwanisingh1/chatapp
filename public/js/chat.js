@@ -44,6 +44,10 @@ socket.on('disconnect',()=>{
   console.log('disconnected new user');
 });
 
+socket.on('updateUserList',(users)=>{
+  console.log(users);
+});
+
 socket.on('newLocationMessage',(message)=>{
   var formattedTime=moment().format('hh:mm a');
 
